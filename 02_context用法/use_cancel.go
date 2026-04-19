@@ -7,7 +7,7 @@ import (
 )
 
 /*
-2.利用context，手动让2个goroutine同时结束[是不是更简单?]
+2.利用context，手动让2个goroutine同时结束
 */
 func useCancel1() {
 
@@ -39,7 +39,7 @@ func useCancel1() {
 		}
 	}()
 	time.Sleep(10 * time.Second)
-	fmt.Println("10s 时间到了，goroutine需要退出了.")
+	fmt.Println("10s 时间到了,goroutine需要退出了.")
 
 	// 利用context的方法，手动让2个goroutine同时结束
 	cancel()
