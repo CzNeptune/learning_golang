@@ -1,9 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
+
+type Person struct {
+	Name string `json:"name" label:"姓名"`
+	Age  int    `json:"age"`
+}
 
 func main() {
-	fmt.Println("hello world")
+	t := reflect.TypeOf(Person{})
 
-	fmt.Println("test1")
+	field := t.Field(0)
+	fmt.Println(field.Tag.Get("json"))
+	fmt.Println(field.Tag.Get("label"))
+
 }
